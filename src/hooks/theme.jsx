@@ -4,13 +4,35 @@ const light = extendTheme({
   styles: {
     global: {
       body: {
-        backgroundColor: 'white', // Your desired background color
-        color: 'black', // Your desired text color
+        backgroundColor: 'white',
+        color: 'black',
+        minHeight: '100vh',
       },
     },
   },
   config: {
     initialColorMode: 'light',
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        // bg: 'red.400',
+        // color: 'green.200',
+        boxShadow: '1px 1px 1px 1px gray',
+      },
+      variants: {
+        'icon-button': {
+          bg: 'white',
+          color: 'gray.500',
+          boxShadow: '1px 1px 1px 1px gray',
+
+          _hover: {
+            transform: 'scale(1.05)',
+            color: 'gray.700',
+          },
+        },
+      },
+    },
   },
 });
 
@@ -18,13 +40,35 @@ const dark = extendTheme({
   styles: {
     global: {
       body: {
-        backgroundColor: 'black', // Your desired background color
-        color: 'gray', // Your desired text color
+        backgroundColor: 'black',
+        color: 'gray',
+        minHeight: '100vh',
       },
     },
   },
   config: {
     initialColorMode: 'light',
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        // bg: 'black',
+        // color: 'green.200',
+        boxShadow: '1px 1px 1px 1px white',
+      },
+      variants: {
+        'icon-button': {
+          bg: 'white',
+          color: 'gray.500',
+          boxShadow: '1px 1px 1px 1px white',
+
+          _hover: {
+            transform: 'scale(1.05)',
+            color: 'white',
+          },
+        },
+      },
+    },
   },
 });
 
@@ -32,8 +76,9 @@ const red = extendTheme({
   styles: {
     global: {
       body: {
-        backgroundColor: 'red', // Your desired background color
-        color: 'black', // Your desired text color
+        backgroundColor: 'red',
+        color: 'black',
+        minHeight: '100vh',
       },
     },
   },
@@ -46,8 +91,9 @@ const green = extendTheme({
   styles: {
     global: {
       body: {
-        backgroundColor: 'green', // Your desired background color
-        color: 'green:500', // Your desired text color
+        backgroundColor: 'green',
+        color: 'green:500',
+        minHeight: '100vh',
       },
     },
   },

@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Box, Button, ChakraProvider } from '@chakra-ui/react';
+import { Box, Button, ChakraProvider, IconButton } from '@chakra-ui/react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import { light, dark, red, green } from './hooks/theme';
+import { MoonIcon, StarIcon, ViewIcon, SunIcon } from '@chakra-ui/icons';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,8 +33,8 @@ function App() {
       }
     });
   }
-
   const currentTheme = themes[currentThemeName];
+  console.log('currentThemeName', currentThemeName);
 
   return (
     <ChakraProvider theme={currentTheme}>
@@ -55,6 +56,15 @@ function App() {
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
       <Box>{currentThemeName}</Box>
       <Button onClick={toggleTheme}>Toggle Theme</Button>
+      <IconButton
+        onClick={toggleTheme}
+        icon={currentThemeName === 'light' ? <SunIcon /> : currentThemeName === 'dark' ? <MoonIcon /> : currentThemeName === 'red' ? <StarIcon /> : <ViewIcon />}
+        aria-label="Toggle color mode"
+        size="lg"
+        // variant="ghost"
+        variant="icon-button"
+        display={{ base: 'none', md: 'flex' }}
+      />
     </ChakraProvider>
   );
 }
