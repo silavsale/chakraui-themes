@@ -85,6 +85,27 @@ const red = extendTheme({
   config: {
     initialColorMode: 'light',
   },
+  components: {
+    Button: {
+      baseStyle: {
+        // bg: 'red.400',
+        // color: 'green.200',
+        boxShadow: '1px 1px 1px 1px gray',
+      },
+      variants: {
+        'icon-button': {
+          bg: 'white',
+          color: 'gray.500',
+          boxShadow: '1px 1px 1px 1px gray',
+
+          _hover: {
+            transform: 'scale(1.05)',
+            color: 'gray.700',
+          },
+        },
+      },
+    },
+  },
 });
 
 const green = extendTheme({
@@ -99,6 +120,27 @@ const green = extendTheme({
   },
   config: {
     initialColorMode: 'dark',
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        // bg: 'red.400',
+        // color: 'green.200',
+        boxShadow: '1px 1px 1px 1px gray',
+      },
+      variants: {
+        'icon-button': {
+          bg: 'white',
+          color: 'gray.500',
+          boxShadow: '1px 1px 1px 1px gray',
+
+          _hover: {
+            transform: 'scale(1.05)',
+            color: 'gray.700',
+          },
+        },
+      },
+    },
   },
 });
 
